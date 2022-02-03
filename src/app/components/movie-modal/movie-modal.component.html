@@ -1,0 +1,23 @@
+<div>
+  <mat-card-content style="margin-top: 30px;">
+    <mat-dialog-content>
+      <div *ngFor="let data of propsData | keyvalue">
+        <div class="content_wrapper">
+          <p class="card-subtitle" style="padding-right: 10px;">{{data.key | titlecase}}:</p>
+          <p class="card-subtitle"
+             *ngIf="data.key !== 'created' && data.key !== 'edited' && data.key !== 'films'">{{data.value}}</p>
+          <p class="card-subtitle" *ngIf="data.key == 'created'">{{data.value | date: 'dd.MM.YYY: hh:mm'}}</p>
+          <p class="card-subtitle" *ngIf="data.key == 'edited'">{{data.value | date: 'dd.MM.YYY: hh:mm'}}</p>
+          <div class="card-subtitle" *ngIf="data.key == 'films'">
+            <div class="ss" *ngFor="let films of data.value">
+              {{films}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <mat-card-actions style="position:relative;">
+        <button style="position: absolute;right: 10px" mat-button (click)="closeDialog()">Close</button>
+      </mat-card-actions>
+  </mat-dialog-content>
+  </mat-card-content>
+</div>

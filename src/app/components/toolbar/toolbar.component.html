@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>Hello, {{username}}</h1>
+    <button (click)="toggleMenu()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <button (click)="logOut()" style="position: absolute; right: 10px" mat-icon-button>
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

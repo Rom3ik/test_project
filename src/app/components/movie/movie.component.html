@@ -1,0 +1,87 @@
+<div>
+  <div class="data_wrapper" *ngIf="dataLoaded">
+    <h2>{{movieData?.title}}</h2>
+    <p>{{movieData?.opening_crawl}}</p>
+    <small>Date: {{movieData?.release_date}}</small>
+
+    <div style="margin-top: 20px;">
+      <h2>Starships</h2>
+      <div style="overflow-x:auto;">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Starship class</th>
+            <th scope="col">Passengers</th>
+            <th scope="col">Length</th>
+            <th scope="col">Created</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let starship of starships" (click)="movieDetails(starship, 'starship')">
+            <td>{{starship?.name}}</td>
+            <td>{{starship?.starship_class}}</td>
+            <td>{{starship?.passengers}}</td>
+            <td>{{starship?.length}}</td>
+            <td>{{starship?.created | date: 'dd.MM.yyy H:mm'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <h2>Characters</h2>
+      <div style="overflow-x:auto;">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Height</th>
+            <th scope="col">Mass</th>
+            <th scope="col">Created</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let character of characters" (click)="movieDetails(character, 'character')">
+            <td>{{character?.name}}</td>
+            <td>{{character?.gender | titlecase}}</td>
+            <td>{{character?.height}}</td>
+            <td>{{character?.mass}}</td>
+            <td>{{character?.created | date: 'dd.MM.yyy H:mm'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <h2>Planets</h2>
+      <div style="overflow-x:auto;">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Climate</th>
+            <th scope="col">Gravity</th>
+            <th scope="col">Population</th>
+            <th scope="col">Created</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let planet of planets" (click)="movieDetails(planet, 'planet')">
+            <td>{{planet?.name}}</td>
+            <td>{{planet?.climate | titlecase}}</td>
+            <td>{{planet?.gravity}}</td>
+            <td>{{planet?.population}}</td>
+            <td>{{planet?.created | date: 'dd.MM.yyy H:mm'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <app-loader class="loader_wrapper" *ngIf="!dataLoaded"></app-loader>
+</div>

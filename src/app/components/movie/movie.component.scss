@@ -1,0 +1,9 @@
+.data_wrapper {
+  margin: 30px;
+}
+
+tr {
+  &:hover {
+    cursor: pointer;
+  }
+}
