@@ -46,7 +46,7 @@ export class JwtGeneratorService implements JwtInterface {
       alg: 'HS256',
       typ: 'JWT'
     };
-    const minutesToAdd = .3;
+    const minutesToAdd = 3;
     const currentDate = new Date();
     this.setTokenExpDate(new Date(new Date(currentDate.getTime() + (minutesToAdd * 60 * 1000))).getTime());
     const stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
