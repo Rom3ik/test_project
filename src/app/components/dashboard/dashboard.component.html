@@ -1,17 +1,17 @@
- <div class="movies_wrapper">
-      <mat-card *ngFor="let movie of movies; trackBy: trackByEpisodeId">
-        <mat-card-title>{{movie?.title}}</mat-card-title>
-        <mat-card-content>
-          <mat-card-subtitle>
-            <span>{{movie?.opening_crawl}}</span>
-            <div class="additional_info">
-              <span>Producers: {{movie?.producer}}</span>
-              <span>Date: {{movie?.release_date | date : 'dd.MM.yyy'}}</span>
-            </div>
-          </mat-card-subtitle>
-        </mat-card-content>
-        <mat-card-actions style="text-align:right">
-          <button mat-button color="primary" (click)="goToMoviePage(movie?.url)">More</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+<div class="movies_wrapper">
+  <mat-card *ngFor="let movie of movies; trackBy: trackByEpisodeId">
+    <mat-card-title>{{movie?.title}}</mat-card-title>
+    <mat-card-content>
+      <mat-card-subtitle>
+        <span>{{movie?.opening_crawl}}</span>
+        <div class="additional_info">
+          <span>Producers: {{movie?.producer}}</span>
+          <span>Date: {{movie?.release_date | date : 'dd.MM.yyy'}}</span>
+        </div>
+      </mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions style="text-align:right">
+      <button mat-button color="primary" (click)="goToMoviePage(movie?.url)">More</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
