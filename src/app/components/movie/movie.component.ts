@@ -42,7 +42,6 @@ export class MovieComponent implements OnInit, OnDestroy {
     this.getMovie(this.movieUrl);
   }
 
-
   ngOnDestroy(): void {
     this.unsubscribe$.next(true);
     this.unsubscribe$.complete();
